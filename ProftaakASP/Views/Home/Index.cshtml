@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<head>
+    <link href="HomePageDesign.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<div class="jumbotron">
+    <h1>Acknowledge Participation</h1>
+    <p class="lead">The application designed to help the elderly</p>
+
+    <p><a href="http://wehelpen.nl" class="btn btn-primary btn-block">Learn more &raquo;</a></p>
+</div>
+
+@*Hier komt een eventuele search box maar ik weet niet waarvoor *@
+@*<div class="col-md-12">
+    <div align="center">
+        <form>
+            <input type="text" placeholder="Search..." required>
+            <input type="button" value="Search">
+        </form>
+    </div>
+</div>*@
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div align="center">
+            <h2>Offer your help</h2>
+            <p>
+                <input type="button" class="btn btn-success btn-lg" style="height:300px;width:300px" value="Go To Help Offers" onclick="location.href='@Url.Action("Index", "Account" )'" />
+            </p>
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div align="center">
+            <h2>Request for help</h2>
+            <p>
+                <input type="button" class="btn btn-primary btn-lg" style="height:300px;width:300px" value="Go To Help Requests" onclick="location.href='@Url.Action("Index", "Account" )'"/>
+            </p>
+
+        </div>
+    </div>
+</div>
