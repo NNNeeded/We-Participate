@@ -148,7 +148,9 @@
     <Compile Include="App_DAL\AccountSQLContext.cs" />
     <Compile Include="App_DAL\Database.cs" />
     <Compile Include="App_DAL\IAccountContext.cs" />
+    <Compile Include="App_DAL\IMessageContext.cs" />
     <Compile Include="App_DAL\IRequestContext.cs" />
+    <Compile Include="App_DAL\MessageSQLContext.cs" />
     <Compile Include="App_DAL\RequestSQLContext.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
