@@ -153,9 +153,13 @@
     <Compile Include="App_DAL\IOfferContext.cs" />
     <Compile Include="App_DAL\IMessageContext.cs" />
     <Compile Include="App_DAL\IRequestContext.cs" />
+    <Compile Include="App_DAL\IRequestTagContext.cs" />
+    <Compile Include="App_DAL\ITagContext.cs" />
     <Compile Include="App_DAL\MessageSQLContext.cs" />
     <Compile Include="App_DAL\OfferSQLContext.cs" />
     <Compile Include="App_DAL\RequestSQLContext.cs" />
+    <Compile Include="App_DAL\RequestTagSQLContext.cs" />
+    <Compile Include="App_DAL\TagSQLContext.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
