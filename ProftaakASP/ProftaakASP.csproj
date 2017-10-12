@@ -147,17 +147,23 @@
   <ItemGroup>
     <Compile Include="App_DAL\AccountSQLContext.cs" />
     <Compile Include="App_DAL\Database.cs" />
+    <Compile Include="App_DAL\FriendsSQLContext.cs" />
     <Compile Include="App_DAL\IAccountContext.cs" />
+    <Compile Include="App_DAL\IFriendsContext.cs" />
+    <Compile Include="App_DAL\IOfferContext.cs" />
     <Compile Include="App_DAL\IRequestContext.cs" />
+    <Compile Include="App_DAL\OfferSQLContext.cs" />
     <Compile Include="App_DAL\RequestSQLContext.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountRepository.cs" />
+    <Compile Include="Controllers\FriendsRepository.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LoginRepository.cs" />
+    <Compile Include="Controllers\OfferRepository.cs" />
     <Compile Include="Controllers\RequestController.cs" />
     <Compile Include="Controllers\RequestRepository.cs" />
     <Compile Include="Global.asax.cs">
