@@ -151,7 +151,9 @@
     <Compile Include="App_DAL\IAccountContext.cs" />
     <Compile Include="App_DAL\IFriendsContext.cs" />
     <Compile Include="App_DAL\IOfferContext.cs" />
+    <Compile Include="App_DAL\IMessageContext.cs" />
     <Compile Include="App_DAL\IRequestContext.cs" />
+    <Compile Include="App_DAL\MessageSQLContext.cs" />
     <Compile Include="App_DAL\OfferSQLContext.cs" />
     <Compile Include="App_DAL\RequestSQLContext.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
