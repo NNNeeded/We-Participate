@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -146,10 +147,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_DAL\AccountSQLContext.cs" />
+    <Compile Include="App_DAL\CategorySQLContext.cs" />
     <Compile Include="App_DAL\Database.cs" />
     <Compile Include="App_DAL\FriendsSQLContext.cs" />
     <Compile Include="App_DAL\GenderSQLContext.cs" />
     <Compile Include="App_DAL\IAccountContext.cs" />
+    <Compile Include="App_DAL\ICategorySQLContext.cs" />
     <Compile Include="App_DAL\IFriendsContext.cs" />
     <Compile Include="App_DAL\IGenderSQLContext.cs" />
     <Compile Include="App_DAL\IOfferContext.cs" />
