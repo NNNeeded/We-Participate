@@ -50,11 +50,10 @@ namespace ProftaakASP.App_DAL
 
         public bool InsertOffer(Offer o)
         {
-            string query = "INSERT INTO Offer(ID, AccountID, RequestID, Title, Context) VALUES (@id, @accountID, @requestID, @title, @context);";
+            string query = "INSERT INTO Offer(AccountID, RequestID, Title, Context) VALUES (@accountID, @requestid, @title, @context);";
             using (SqlConnection conn = Database.Connection)
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id", o.Id);
                 cmd.Parameters.AddWithValue("@accountID", o.AccountId);
                 cmd.Parameters.AddWithValue("@requestID", o.RequestId);
                 cmd.Parameters.AddWithValue("@title", o.Title);
@@ -74,6 +73,8 @@ namespace ProftaakASP.App_DAL
             }            
             return false;
         }
+
+
 
         public bool DeleteOffer(int id)
         {

@@ -32,12 +32,15 @@ namespace ProftaakASP.Models
             this.context = context;
         }
 
+
         //Hier maak ik nog een keer een offer aan zonder een id
         //Dit is omdat wanneer je een offer insert in de database het id niet nodig is omdat deze auto-increment
         public Offer(int accountid, int requestid, string title, string context):this(-1, accountid, requestid, title, context)
         {
       
         }
+
+
 
         //Hier maak ik een ToString methode 
         public override string ToString()

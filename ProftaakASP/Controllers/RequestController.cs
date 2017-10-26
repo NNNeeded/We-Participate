@@ -16,6 +16,7 @@ namespace ProftaakASP.Controllers
         public ActionResult Index()
         {
             List<Request> requests = rr.GetAllRequests();
+            
             return View(requests);
         }
 

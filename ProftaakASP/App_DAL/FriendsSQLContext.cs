@@ -40,7 +40,7 @@ namespace ProftaakASP.App_DAL
                 cmd.Parameters.AddWithValue("@idone", x.Id);
                 cmd.Parameters.AddWithValue("@idtwo", y.Id);
                 cmd.ExecuteNonQuery();
-                conn.Close;
+
             }
         }
     }
