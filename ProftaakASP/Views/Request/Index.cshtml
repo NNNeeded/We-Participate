@@ -1,63 +1,75 @@
 ﻿@model IEnumerable<ProftaakASP.Models.Request>
-
 @{
     ViewBag.Title = "Index";
 }
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+    <meta charset="UTF-8">
+</head>
 
-<h2>Index</h2>
-
-<p>
+<p style="margin-top:70px;">
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AccountId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Context)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DatePlaced)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateHelpNeeded)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </th>
-        <th></th>
-    </tr>
+    @foreach (var item in Model)
+    {
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AccountId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Context)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DatePlaced)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateHelpNeeded)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoryId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Create Offer", "Create", "Offer", new {id = item.Id}, null) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id }) 
-        </td>
-    </tr>
-}
+        <tr>
+            <th>
+                <h1 class="txtTitleBox" style="width:200%;">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </h1>
+            </th>
+            <td></td>
 
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountId)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountId)
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Context)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Context)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DatePlaced)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePlaced)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateHelpNeeded)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateHelpNeeded)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Create Offer", "Create", "Offer", new { id = item.Id }, null) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 </table>

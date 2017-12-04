@@ -1,0 +1,132 @@
+/* CSS Style Sheet */
+
+@font-face {
+    font-family: Arial;
+    src: url(Arial.ttf);
+}
+
+body {
+	font-family: Arial;
+	padding: 10px;
+}
+
+.txtRed {
+	color: #d80027;
+	font-size: 48px;
+}
+
+.txtRedSmall {
+	color: #d80027;
+	font-size: 25px;
+	text-align: center;
+}
+
+.txtTitleBox {
+	color: white;
+	font-size: 50px;
+	background-color: #d80027;
+	padding: 10px;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.txtBox {
+	color: white;
+	background-color: #ff9b9b;
+	font-size: 25px;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+
+.top {
+
+}
+
+.middle {
+
+}
+
+.bottom {
+
+}
+
+#topLogo {
+	width: 25%;
+}
+
+#userImg {
+	width: 15%;
+	margin-left: 5%;
+	display: inline-block;
+}
+
+#login {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 2%;
+	margin-bottom: 25%;
+	text-align: center;
+}
+
+#normal {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 2%;
+	margin-bottom: 25%;
+}
+
+.loginField {
+	width: 70%;
+	height: 40px;
+	font-size: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.loginBtn {
+	width: 70%;
+	height: 65px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	font-size: 30px;
+	color: #d80027;
+}
+
+.menuBtn {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 65px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 30px;
+	color: #d80027;
+}
+
+.search {
+    padding: 8px 15px;
+    background: rgba(50, 50, 50, 0.2);
+    border: 0px solid #dbdbdb;
+}
+
+.button {
+    position: relative;
+    padding: 6px 15px;
+    left: -8px;
+    border: 2px solid #207cca;
+    background-color: #207cca;
+    color: #fafafa;
+}
+
+    .button:hover {
+        background-color: #fafafa;
+        color: #207cca;
+    }
