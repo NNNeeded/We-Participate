@@ -10,6 +10,7 @@
 <p style="margin-top:70px;">
     @Html.ActionLink("Create New", "Create")
 </p>
+
 <table class="table">
     @foreach (var item in Model)
     {
@@ -66,9 +67,19 @@
         </tr>
         <tr>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Create Offer", "Create", "Offer", new { id = item.Id }, null) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @if (Convert.ToBoolean(Session["AccountId"] = item.AccountId))
+                {
+                    Html.ActionLink("Edit", "Edit", new { id = item.Id });
+                    Html.ActionLink("Delete", "Delete", new { id = item.Id });
+                }
+                @if (Session["Rank"].ToString() == "Hulpverlener")
+                {
+                    Html.ActionLink("Maak hulpverzoek", "Create", "Offer", new { id = item.Id }, null);
+                }
+               
+               
+           
+               
             </td>
         </tr>
     }

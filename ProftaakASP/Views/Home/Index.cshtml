@@ -1,19 +1,30 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
 <head>
     <link rel="stylesheet" type="text/css" href="~/Content/style.css">
     <meta charset="UTF-8">
 </head>
-
 <div style="margin-top:70px;">
-    <!-- Weergave hulpvragen -->
-    <div>
-        <p class="txtTitleBox">Hulpvragen</p>
-        <input type="button" class="menuBtn" style="min-width:90%;" value="Nieuwe hulpvraag" onclick="location.href='@Url.Action("Create", "Request" )'"/>
-        <input type="button" class="menuBtn" style="min-width:90%;" value="Hulpvragen bekijken" onclick="location.href='@Url.Action("Index", "Request" )'" />
-    </div>
+
+    @if (Session["Rank"].ToString() == "Hulpbehoevende")
+    {
+          <!-- aanmaken hulpvragen -->
+        <div>
+            <p class="txtTitleBox">Hulpvragen</p> 
+            <input type="button" class="menuBtn" style="min-width:90%;" value="Nieuwe hulpvraag" onclick="location.href='@Url.Action("Create", "Request" )'" />
+        </div>
+    }
+    @if (Session["Rank"].ToString() == "Hulpverlener")
+    {
+          <!-- Weergave hulpvragen -->
+        <div>
+            <p class="txtTitleBox">Hulpvragen</p>
+            <input type="button" class="menuBtn" style="min-width:90%;" value="Hulpvragen bekijken" onclick="location.href='@Url.Action("Index", "Request" )'" />
+        </div>
+    }
+
+
     <!-- Weergave berichten -->
     <div>
         <p class="txtTitleBox">Berichten</p>
@@ -22,16 +33,22 @@
     <!-- Weergave opties account -->
     <div>
         <p class="txtTitleBox">Uw account</p>
-        <input type="button" class="menuBtn" style="min-width:90%;" value="Mijn account bekijken" onclick="location.href='@Url.Action("Index", "Account" )'"/>
+        <input type="button" class="menuBtn" style="min-width:90%;" value="Mijn account bekijken" onclick="location.href='@Url.Action("Index", "Account" )'" />
     </div>
-    <!-- Weergave gekoppelde hulpverlener -->
-    <div>
-        <p class="txtTitleBox">Uw hulpverlener</p>
-        <input type="button" class="menuBtn" style="min-width:90%;" value="Stuur een bericht naar mijn hulpverlener"/>
-    </div>
-    <!-- Weergave gekoppelde hulpbehoevende -->
-    <div>
-        <p class="txtTitleBox">Aan u gekoppelde hulpbehoevende</p>
-        <input type="button" class="menuBtn" style="min-width:90%;" value="Stuur een bericht naar mijn hulpbehoevende" />
-    </div>
+    @if (Session["Rank"].ToString() == "Hulpbehoevende")
+    {
+        <!-- Weergave gekoppelde hulpverlener -->
+        <div>
+            <p class="txtTitleBox">Uw hulpverlener</p>
+            <input type="button" class="menuBtn" style="min-width:90%;" value="Stuur een bericht naar mijn hulpverlener" />
+        </div>
+    }
+    @if (Session["Rank"].ToString() == "Hulpverlener")
+    {
+         <!-- Weergave gekoppelde hulpbehoevende -->
+        <div>
+            <p class="txtTitleBox">Aan u gekoppelde hulpbehoevende</p>
+            <input type="button" class="menuBtn" style="min-width:90%;" value="Stuur een bericht naar mijn hulpbehoevende" />
+        </div>
+    }
 </div>

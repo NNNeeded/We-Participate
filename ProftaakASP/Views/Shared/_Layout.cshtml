@@ -24,13 +24,20 @@
                     {
                         <li>@Html.ActionLink("Home", "Index", "Login")</li>
                     }
-                    else
+                    else if (Convert.ToBoolean(Session["AccountID"]) == true && Session["Rank"].ToString() == "Hulpbehoevende")
                     {
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("Create Help Request", "Create", "Request")</li>
-                        <li>@Html.ActionLink("Check Help Request", "Index", "Request")</li>
+                        <li>@Html.ActionLink("Create help request", "Create", "Request")</li>
+                        <li>@Html.ActionLink("Log out", "Index", "Login")</li>
+                    }
+                    else if (Convert.ToBoolean(Session["AccountID"]) == true && Session["Rank"].ToString() == "Hulpverlener")
+                    {
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Find help requests", "Index", "Request")</li>
                         <li>@Html.ActionLink("Log out", "Index", "Login")</li>
                     }
                     
