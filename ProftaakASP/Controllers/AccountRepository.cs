@@ -48,5 +48,10 @@ namespace ProftaakASP.Controllers
         {
             return context.Login(username, password);
         }
+
+        public List<Account> GetAllFriendedAccounts(int id)
+        {
+            return context.GetAllFriendedAccounts(id);
+        }
     }
 }

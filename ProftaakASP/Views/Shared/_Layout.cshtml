@@ -30,6 +30,8 @@
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li>@Html.ActionLink("Create help request", "Create", "Request")</li>
+                        <li>@Html.ActionLink("Create message", "Create", "Message")</li>
+                        <li>@Html.ActionLink("Inbox", "IndexReceiver", "Message")</li>
                         <li>@Html.ActionLink("Log out", "Index", "Login")</li>
                     }
                     else if (Convert.ToBoolean(Session["AccountID"]) == true && Session["Rank"].ToString() == "Hulpverlener")
@@ -38,6 +40,8 @@
                         <li>@Html.ActionLink("About", "About", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li>@Html.ActionLink("Find help requests", "Index", "Request")</li>
+                        <li>@Html.ActionLink("Create message", "Create", "Message")</li>
+                        <li>@Html.ActionLink("Inbox", "IndexReceiver", "Message")</li>
                         <li>@Html.ActionLink("Log out", "Index", "Login")</li>
                     }
                     

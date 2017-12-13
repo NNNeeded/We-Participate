@@ -16,5 +16,6 @@ namespace ProftaakASP.App_DAL
         bool DeleteAccount(int id);
         Account GetAccountById(int id);
         Account Login(string username, string password);
+        List<Account> GetAllFriendedAccounts(int id);
     }
 }

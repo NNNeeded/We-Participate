@@ -9,7 +9,7 @@ using System.Web;
 namespace ProftaakASP.App_DAL
 {
     //De SQLContext is gelinked aan een interface 
-    public class AccountSQLContext:IAccountContext
+    public class AccountSQLContext : IAccountContext
     {
         //Maak een account object aan genaamd account
         Account account;
@@ -160,6 +160,30 @@ namespace ProftaakASP.App_DAL
             return account;
         }
 
+        //Get all friended accounts
+        public List<Account> GetAllFriendedAccounts(int id)
+        {
+            List<Account> accounts = new List<Account>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT * FROM Account A LEFT JOIN Friends F1 ON A.ID = F1.FriendOne LEFT JOIN Friends F2 ON A.ID = F2.FriendTWo WHERE A.ID = @id";
+
+                //commit
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            accounts.Add(CreateAccountFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return accounts;
+        }
+
         //Get username and passwords
         public Account Login(string username, string password)
         {
@@ -195,22 +219,22 @@ namespace ProftaakASP.App_DAL
         private Account CreateAccountFromReader(SqlDataReader reader)
         {
             return new Account(
-                 Convert.ToInt32(reader["ID"]),
-                 Convert.ToString(reader["PhoneNumber"]),
-                 Convert.ToString(reader["Email"]),
-                 Convert.ToString(reader["Username"]),
-                 Convert.ToString(reader["Password"]),
-                 Convert.ToString(reader["Rank"]),
-                 Convert.ToString(reader["FirstName"]),
-                 Convert.ToString(reader["LastName"]),
-                 Convert.ToDateTime(reader["BirthYear"]),
-                 Convert.ToString(reader["City"]),
-                 Convert.ToString(reader["Street"]),
-                 Convert.ToString(reader["HouseNumber"]),
-                 Convert.ToString(reader["Zipcode"]),
-                 Convert.ToString(reader["Gender"]),
-                 Convert.ToString(reader["ProfileDescription"]),
-                 Convert.ToInt32(reader["PreferredCategory"]));
+             Convert.ToInt32(reader["ID"]),
+             Convert.ToString(reader["PhoneNumber"]),
+             Convert.ToString(reader["Email"]),
+             Convert.ToString(reader["Username"]),
+             Convert.ToString(reader["Password"]),
+             Convert.ToString(reader["Rank"]),
+             Convert.ToString(reader["FirstName"]),
+             Convert.ToString(reader["LastName"]),
+             Convert.ToDateTime(reader["BirthYear"]),
+             Convert.ToString(reader["City"]),
+             Convert.ToString(reader["Street"]),
+             Convert.ToString(reader["HouseNumber"]),
+             Convert.ToString(reader["Zipcode"]),
+             Convert.ToString(reader["Gender"]),
+             Convert.ToString(reader["ProfileDescription"]),
+             Convert.ToInt32(reader["PreferredCategory"]));
         }
     }
 }
