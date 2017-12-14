@@ -40,7 +40,7 @@
         <!-- Weergave gekoppelde hulpverlener -->
         <div>
             <p class="txtTitleBox">Uw hulpverlener</p>
-            <input type="button" class="menuBtn" style="min-width:90%;" value="Stuur een bericht naar mijn hulpverlener" />
+            <input type="button" class="menuBtn" style="min-width:90%;" value="Stuur een bericht" onclick="location.href='@Url.Action("Create", "Message" )'" />
         </div>
     }
     @if (Session["Rank"].ToString() == "Hulpverlener")
@@ -48,7 +48,7 @@
          <!-- Weergave gekoppelde hulpbehoevende -->
         <div>
             <p class="txtTitleBox">Aan u gekoppelde hulpbehoevende</p>
-            <input type="button" class="menuBtn" style="min-width:90%;" value="Stuur een bericht naar mijn hulpbehoevende" />
+            <input type="button" class="menuBtn" style="min-width:90%;" value="Stuur een bericht" onclick="location.href='@Url.Action("Create", "Message" )'" />
         </div>
     }
 </div>

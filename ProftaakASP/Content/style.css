@@ -108,7 +108,9 @@ body {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	font-size: 30px;
-	color: #d80027;
+	color: white;
+	border-radius: 40px;
+	background-color: #666666;
 }
 
 .search {
