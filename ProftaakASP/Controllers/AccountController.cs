@@ -53,11 +53,11 @@ namespace ProftaakASP.Controllers
                 // TODO: Add insert logic here
                 Account account = new Account(collection["PhoneNumber"], collection["Email"], collection["Username"], collection["Password"], collection["Rank"], collection["FirstName"], collection["LastName"], Convert.ToDateTime(collection["BirthYear"]), collection["City"], collection["Street"], collection["HouseNumber"], collection["Zipcode"], collection["Gender"], collection["ProfileDescription"], Convert.ToInt32(collection["PreferredCategory"]));
                 ar.InsertAccount(account);
-                return RedirectToAction("Index", "Account");
+                return RedirectToAction("Index", "Login");
             }
             catch
             {
-                return View();
+                return View("Index", "Login");
             }
         }
 
