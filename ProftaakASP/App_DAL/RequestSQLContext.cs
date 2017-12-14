@@ -17,7 +17,7 @@ namespace ProftaakASP.App_DAL
             List<Request> requests = new List<Request>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT * FROM REQUEST ORDER BY ID";
+                string query = "Select * From Request R Where R.RequestExpiration >= Convert(Date, GetDate(), 101)";
 
                 //commit
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -39,8 +39,8 @@ namespace ProftaakASP.App_DAL
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "INSERT INTO REQUEST (AccountID, Title, Context, DatePlaced, DateHelpNeeded, CategoryID)" +
-                    "VALUES (@accountid, @title, @context, @dateplaced, @datehelpneeded, @categoryid)";
+                string query = "INSERT INTO REQUEST (AccountID, Title, Context, DatePlaced, DateHelpNeeded, RequestExpiration, CategoryID)" +
+                    "VALUES (@accountid, @title, @context, @dateplaced, @datehelpneeded, @requestexpiration, @categoryid)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@accountid", request.AccountId);
@@ -48,6 +48,7 @@ namespace ProftaakASP.App_DAL
                     command.Parameters.AddWithValue("@context", request.Context);
                     command.Parameters.AddWithValue("@dateplaced", request.DatePlaced);
                     command.Parameters.AddWithValue("@datehelpneeded", request.DateHelpNeeded);
+                    command.Parameters.AddWithValue("@requestexpiration", request.RequestExpiration);
                     command.Parameters.AddWithValue("@categoryid", request.CategoryId);
 
                     try
@@ -69,7 +70,7 @@ namespace ProftaakASP.App_DAL
             using (SqlConnection connection = Database.Connection)
             {
                 string query = "UPDATE REQUEST" +
-                    " SET AccountID=@accountid, Title=@title, Context=@context, DatePlaced=@dateplaced, DateHelpNeeded=@datehelpneeded, CategoryID=@categoryid" +
+                    " SET AccountID=@accountid, Title=@title, Context=@context, DatePlaced=@dateplaced, DateHelpNeeded=@datehelpneeded, RequestExpiration=@requestexpiration, CategoryID=@categoryid" +
                     " WHERE ID=@id";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -79,6 +80,7 @@ namespace ProftaakASP.App_DAL
                     command.Parameters.AddWithValue("@context", request.Context);
                     command.Parameters.AddWithValue("@dateplaced", request.DatePlaced);
                     command.Parameters.AddWithValue("@datehelpneeded", request.DateHelpNeeded);
+                    command.Parameters.AddWithValue("@requestexpiration", request.RequestExpiration);
                     command.Parameters.AddWithValue("@categoryid", request.CategoryId);
 
 
@@ -155,6 +157,7 @@ namespace ProftaakASP.App_DAL
                  Convert.ToString(reader["Context"]),
                  Convert.ToDateTime(reader["DatePlaced"]),
                  Convert.ToDateTime(reader["DateHelpNeeded"]),
+                 Convert.ToDateTime(reader["RequestExpiration"]),
                  Convert.ToInt32(reader["CategoryId"]));
         }
     }

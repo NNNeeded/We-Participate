@@ -1,14 +1,17 @@
 ﻿@model IEnumerable<ProftaakASP.Models.Request>
+
 @{
     ViewBag.Title = "Index";
 }
+
 <head>
     <link rel="stylesheet" type="text/css" href="~/Content/style.css">
     <meta charset="UTF-8">
 </head>
 
+
 <p style="margin-top:70px;">
-    @Html.ActionLink("Create New", "Create")
+   
 </p>
 
 <table class="table">
@@ -22,7 +25,6 @@
                 </h1>
             </th>
             <td></td>
-
         </tr>
         <tr>
             <th>
@@ -59,6 +61,14 @@
         </tr>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.RequestExpiration)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestExpiration)
+            </td>
+        </tr>
+        <tr>
+            <th>
                 @Html.DisplayNameFor(model => model.CategoryId)
             </th>
             <td>
@@ -67,19 +77,11 @@
         </tr>
         <tr>
             <td>
-                @if (Convert.ToBoolean(Session["AccountId"] = item.AccountId))
-                {
-                    Html.ActionLink("Edit", "Edit", new { id = item.Id });
-                    Html.ActionLink("Delete", "Delete", new { id = item.Id });
-                }
+               
                 @if (Session["Rank"].ToString() == "Hulpverlener")
                 {
-                    Html.ActionLink("Maak hulpverzoek", "Create", "Offer", new { id = item.Id }, null);
+                    @Html.ActionLink("Maak hulpverzoek", "Create", "Offer", new { id = item.Id }, null);
                 }
-               
-               
-           
-               
             </td>
         </tr>
     }

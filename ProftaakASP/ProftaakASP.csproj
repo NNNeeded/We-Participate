@@ -244,7 +244,6 @@
     <Content Include="Views\Login\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_LoginPage.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
-    <Content Include="Views\Request\Index.cshtml" />
     <Content Include="Views\Request\Create.cshtml" />
     <Content Include="Views\Request\Edit.cshtml" />
     <Content Include="Views\Request\Details.cshtml" />
@@ -257,6 +256,7 @@
     <Content Include="Views\Message\Create.cshtml" />
     <Content Include="Views\Message\Delete.cshtml" />
     <Content Include="Views\Message\IndexReceiver.cshtml" />
+    <Content Include="Views\Request\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

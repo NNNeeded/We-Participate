@@ -45,7 +45,7 @@ namespace ProftaakASP.Controllers
             try
             {
                 // TODO: Add insert logic here
-                Request request = new Request(Convert.ToInt32(Session["AccountId"]), collection["Title"], collection["Context"], DateTime.Today, Convert.ToDateTime(collection["DateHelpNeeded"]), Convert.ToInt32(collection["CategoryID"]));
+                Request request = new Request(Convert.ToInt32(Session["AccountId"]), collection["Title"], collection["Context"], DateTime.Today, Convert.ToDateTime(collection["DateHelpNeeded"]), Convert.ToDateTime(collection["RequestExpiration"]), Convert.ToInt32(collection["CategoryID"]));
                 rr.InsertRequest(request);
                 return RedirectToAction("Index");
             }
@@ -75,7 +75,7 @@ namespace ProftaakASP.Controllers
             try
             {
                 // TODO: Add update logic here
-                Request request = new Request(Convert.ToInt32(collection["AccountID"]), collection["Title"], collection["Context"], Convert.ToDateTime(collection["DatePlaced"]), Convert.ToDateTime(collection["DateHelpNeeded"]), Convert.ToInt32(collection["CategoryID"]));
+                Request request = new Request(Convert.ToInt32(collection["AccountID"]), collection["Title"], collection["Context"], Convert.ToDateTime(collection["DatePlaced"]), Convert.ToDateTime(collection["DateHelpNeeded"]), Convert.ToDateTime(collection["RequestExpiration"]), Convert.ToInt32(collection["CategoryID"]));
                 rr.UpdateRequest(request);
                 return RedirectToAction("Index");
             }
