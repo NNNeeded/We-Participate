@@ -19,7 +19,8 @@ namespace ProftaakASP.Controllers
         public ActionResult Index()
         {
             // Hier maak ik een lijst aan die nodig is om alle accounts in op te slaan, vervolgens vul ik de lijst met alle accounts via de repository
-            List<Account> accounts = ar.GetAllAccounts();
+            List<Account> accounts = new List<Account>();
+            accounts.Add(ar.GetAccountById(Convert.ToInt32(Session["AccountId"])));
             return View(accounts);
         }
 
