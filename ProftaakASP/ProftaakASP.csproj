@@ -175,6 +175,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LoginRepository.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\MessageRepository.cs" />
     <Compile Include="Controllers\OfferController.cs" />
     <Compile Include="Controllers\OfferRepository.cs" />
     <Compile Include="Controllers\RequestController.cs" />
@@ -249,6 +251,11 @@
     <Content Include="Views\Offer\Index.cshtml" />
     <Content Include="Views\Offer\Details.cshtml" />
     <Content Include="Views\Offer\Create.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Message\Details.cshtml" />
+    <Content Include="Views\Message\Create.cshtml" />
+    <Content Include="Views\Message\Delete.cshtml" />
+    <Content Include="Views\Message\IndexReceiver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
