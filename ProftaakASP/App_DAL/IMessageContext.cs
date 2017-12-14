@@ -14,5 +14,7 @@ namespace ProftaakASP.App_DAL
         bool UpdateMessage(Message message);
         bool DeleteMessage(int id);
         Message GetMessageById(int id);
+        List<Message> GetAllMessagesByReceiver(int receiver);
+        bool UpdateIsReadStatus(Message message);
     }
 }
