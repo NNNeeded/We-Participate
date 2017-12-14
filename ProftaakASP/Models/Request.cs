@@ -15,6 +15,7 @@ namespace ProftaakASP.Models
         private string context;
         private DateTime dateplaced;
         private DateTime datehelpneeded;
+        private DateTime requestexpiration;
         private int categoryid;
 
         //Hier maak ik getters en setters voor de attributen
@@ -29,10 +30,13 @@ namespace ProftaakASP.Models
         [DataType(DataType.Date)]
         public DateTime DateHelpNeeded { get { return datehelpneeded; } set { datehelpneeded = value; } }
 
+        [DataType(DataType.Date)]
+        public DateTime RequestExpiration { get { return requestexpiration; } set { requestexpiration = value; } }
+
         public int CategoryId { get { return categoryid; } set { categoryid = value; } }
 
         //Hier link ik de attributen aan een request
-        public Request(int id, int accountid, string title, string context, DateTime dateplaced, DateTime datehelpneeded, int categoryid)
+        public Request(int id, int accountid, string title, string context, DateTime dateplaced, DateTime datehelpneeded, DateTime requestexpiration, int categoryid)
         {
             this.id = id;
             this.accountid = accountid;
@@ -40,12 +44,13 @@ namespace ProftaakASP.Models
             this.context = context;
             this.dateplaced = dateplaced;
             this.datehelpneeded = datehelpneeded;
+            this.requestexpiration = requestexpiration;
             this.categoryid = categoryid;
         }
 
         //Hier maak ik nog een keer een request aan zonder een id
         //Dit is omdat wanneer je een request insert in de database het id niet nodig is omdat deze auto-increment
-        public Request(int accountid, string title, string context, DateTime dateplaced, DateTime datehelpneeded, int categoryid):this(-1, accountid, title, context, dateplaced, datehelpneeded, categoryid)
+        public Request(int accountid, string title, string context, DateTime dateplaced, DateTime datehelpneeded, DateTime requestexpiration, int categoryid):this(-1, accountid, title, context, dateplaced, datehelpneeded, requestexpiration, categoryid)
         {
   
         }
